@@ -1,12 +1,15 @@
-package q01_basic.question04;
+package q02_advanced.question03;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Member {
-	//TODO ここから実装する
 	private int id;
 	private String password;
 	private String name;
 	private int age;
 	private int rank;
+	private List<Coupon> coupons = new ArrayList<>();
 
 	public Member() {
 
@@ -18,6 +21,13 @@ public class Member {
 		this.name = name;
 		this.age = age;
 		this.rank = rank;
+
+		Coupon member1 = new Coupon(1, 0.5, "最初の特典");
+		Coupon member2 = new Coupon(2, 0.25, "今月の特典");
+
+		coupons.add(member1);
+		coupons.add(member2);
+
 	}
 
 	/**
@@ -35,14 +45,14 @@ public class Member {
 	}
 
 	/**
-	 * @return passward
+	 * @return password
 	 */
 	public String getPassword() {
 		return password;
 	}
 
 	/**
-	 * @param passward セットする passward
+	 * @param password セットする password
 	 */
 	public void setPassword(String password) {
 		this.password = password;
@@ -90,13 +100,43 @@ public class Member {
 		this.rank = rank;
 	}
 
-	public void showMember() {
-		System.out.println("***MEMBER DARA***");
-		System.out.println("id:" + id);
-		System.out.println("passward:" + password);
-		System.out.println("name:" + name);
-		System.out.println("age:" + age);
-		System.out.println("rank:" + rank);
-		System.out.println("*****************");
+	/**
+	 * @return coupons
+	 */
+	public List<Coupon> getCoupons() {
+		return coupons;
 	}
+
+	/**
+	 * @param coupons セットする coupons
+	 */
+	public void setCoupons(List<Coupon> coupons) {
+		this.coupons = coupons;
+	}
+
+	public Member getInstance(int id, String password, String name, int age, int rank) {
+		Member member = new Member(id, password, name, age, rank);
+		Coupon coupon1 = new Coupon();
+		Coupon coupon2 = new Coupon();
+
+		coupons.add(coupon1);
+		coupons.add(coupon2);
+
+		return member;
+	}
+
+	public String toString() {
+		return "Member [id=" + id +
+				", password=" + password +
+				", name=" + name +
+				", age=" + age +
+				", rank=" + rank +
+				", coupons=" + coupons + "]";
+	}
+
+	public void showMember() {
+		System.out.println(this.toString());
+		System.out.println("******************");
+	}
+
 }
