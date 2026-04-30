@@ -9,7 +9,7 @@ public class Member {
 	private String name;
 	private int age;
 	private int rank;
-	private List<Coupon> coupons = new ArrayList<>();
+	private List<Coupon> coupons;
 
 	public Member() {
 
@@ -21,12 +21,6 @@ public class Member {
 		this.name = name;
 		this.age = age;
 		this.rank = rank;
-
-		Coupon member1 = new Coupon(1, 0.5, "最初の特典");
-		Coupon member2 = new Coupon(2, 0.25, "今月の特典");
-
-		coupons.add(member1);
-		coupons.add(member2);
 
 	}
 
@@ -118,9 +112,11 @@ public class Member {
 		// Memberオブジェクト生成
 		Member member = new Member(id, password, name, age, rank);
 
-		// Couponオブジェクトを2つ生成
-		Coupon coupon1 = Coupon.getInstance(1, 0.5, "最初の特典");
-		Coupon coupon2 = Coupon.getInstance(2, 0.25, "今月の特典");
+		List<Coupon> coupons = new ArrayList<>();
+		coupons.add(Coupon.getInstance(1, 0.5, "最初の特典"));
+		coupons.add(Coupon.getInstance(2, 0.25, "今月の特典"));
+
+		member.setCoupons(coupons);
 
 		return member;
 	}

@@ -10,8 +10,7 @@ public class SystemMain05 {
 		members[0] = new NonMember("Sato Kensuke");
 		members[1] = new Member(1, "Passw0rd", "Miura Manabu", 28, 2);
 
-		members[0].showMember();
-		members[1].showMember();
+		MemberManager.showAllMembers(members);
 
 		System.out.println("---BUY ITEM---");
 		members[0].buyItem();

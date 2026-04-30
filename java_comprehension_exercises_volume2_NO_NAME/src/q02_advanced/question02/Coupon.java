@@ -57,8 +57,9 @@ public class Coupon {
 		this.description = description;
 	}
 
-	public static Coupon getInstance(int id, double rate, String desc) {
-		return new Coupon(id, rate, desc);
+	public static Coupon getInstance(int id, double discountRate, String description) {
+		Coupon coupon = new Coupon(id, discountRate, description);
+		return coupon;
 	}
 
 	public String toString() {

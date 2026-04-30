@@ -1,6 +1,5 @@
 package q02_advanced.question03;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Member {
@@ -9,7 +8,7 @@ public class Member {
 	private String name;
 	private int age;
 	private int rank;
-	private List<Coupon> coupons = new ArrayList<>();
+	private List<Coupon> coupons;
 
 	public Member() {
 
@@ -21,13 +20,6 @@ public class Member {
 		this.name = name;
 		this.age = age;
 		this.rank = rank;
-
-		Coupon member1 = new Coupon(1, 0.5, "最初の特典");
-		Coupon member2 = new Coupon(2, 0.25, "今月の特典");
-
-		coupons.add(member1);
-		coupons.add(member2);
-
 	}
 
 	/**

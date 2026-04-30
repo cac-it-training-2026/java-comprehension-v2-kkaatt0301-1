@@ -59,8 +59,9 @@ class NumberList {
 	 */
 	public void removeIndexOfFirstHalf() {
 		//TODO ここから実装する
-		for (int i = 0; i < numbers.size() / 2 - 0.5; i++) {
-			numbers.remove(i);
+		int removeCount = numbers.size() / 2;
+		for (int i = 0; i < removeCount; i++) {
+			numbers.remove(0);
 		}
 	}
 

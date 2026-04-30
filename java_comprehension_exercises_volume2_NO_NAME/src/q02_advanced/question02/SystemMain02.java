@@ -1,8 +1,8 @@
 package q02_advanced.question02;
 
 import java.io.IOException;
-
-import q02_advanced.question01.Member;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SystemMain02 {
 
@@ -10,9 +10,13 @@ public class SystemMain02 {
 
 		ConsoleReader reader = new ConsoleReader();
 
-		Member memberBase = new Member();
-		Member member1 = memberBase.getInstance(1, "Passw0rd", "Miura Manabu", 28, 2);
-		Member member2 = memberBase.getInstance(2, "aaaAAA", "Sato Kensuke", 43, 1);
+		System.out.println("===会員情報を表示します=== ");
+
+		List<Member> members = new ArrayList<>();
+		members.add(Member.getInstance(1, "Passw0rd", "Miura Manabu", 28, 2));
+		members.add(Member.getInstance(2, "aaaAAA", "Sato Kensuke", 43, 1));
+
+		MemberManager.showAllMembers(members);
 
 		System.out.println("===パスワードを変更します===");
 
@@ -35,8 +39,12 @@ public class SystemMain02 {
 			return;
 		}
 
+		System.out.println("---SHOW DATA---");
+
 		// パスワード更新
 		MemberManager.updatePassword(members, targetId, newPassword);
+
+		MemberManager.showAllMembers(members);
 	}
 
 }

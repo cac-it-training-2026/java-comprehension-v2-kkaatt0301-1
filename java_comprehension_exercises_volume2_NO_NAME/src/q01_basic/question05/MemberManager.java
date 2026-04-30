@@ -6,9 +6,9 @@ public class MemberManager {
 
 	}
 
-	public static void showAllMembers(Member[] members) {
+	public static void showAllMembers(AbstMember[] members) {
 
-		for (Member m : members) {
+		for (AbstMember m : members) {
 			m.showMember();
 		}
 	}
