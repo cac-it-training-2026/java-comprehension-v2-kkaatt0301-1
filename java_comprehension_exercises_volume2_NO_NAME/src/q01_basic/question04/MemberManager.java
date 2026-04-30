@@ -1,6 +1,6 @@
 package q01_basic.question04;
 
-class MemberManager {
+public class MemberManager {
 
 	/**
 	 * インスタンス化の禁止
@@ -9,5 +9,11 @@ class MemberManager {
 	}
 
 	//TODO showAllMembersメソッドを実装する
+	public static void showAllMembers(Member[] members) {
+		System.out.println("---SHOW ALL MEMBERS---");
 
+		for (Member m : members) {
+			m.showMember();
+		}
+	}
 }
