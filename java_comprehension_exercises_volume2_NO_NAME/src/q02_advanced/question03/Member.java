@@ -1,6 +1,9 @@
 package q02_advanced.question03;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import q02_advanced.question02.Coupon;
 
 public class Member {
 	private int id;
@@ -106,13 +109,14 @@ public class Member {
 		this.coupons = coupons;
 	}
 
-	public Member getInstance(int id, String password, String name, int age, int rank) {
+	public static Member getInstance(int id, String password, String name, int age, int rank) {
 		Member member = new Member(id, password, name, age, rank);
-		Coupon coupon1 = new Coupon();
-		Coupon coupon2 = new Coupon();
 
-		coupons.add(coupon1);
-		coupons.add(coupon2);
+		List<Coupon> coupons = new ArrayList<>();
+		coupons.add(Coupon.getInstance(1, 0.5, "最初の特典"));
+		coupons.add(Coupon.getInstance(2, 0.25, "今月の特典"));
+
+		member.setCoupons(coupons);
 
 		return member;
 	}
